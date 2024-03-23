@@ -75,6 +75,8 @@ void Flag(){
 
 void Clock(){
     initwindow(1000,1000,"clojck");
+    setlinestyle(SOLID_LINE,0,5);
+
     int page = 0;
     while(1){
             setactivepage(page);
@@ -115,6 +117,10 @@ void Clock(){
 
 void MovingCar(){
     initwindow(1000,500,"car");
+
+    settextstyle(1, HORIZ_DIR, 5);
+    outtextxy(50,50,"BHOOM   BHOOM !! ");
+
 	for (int i = 0; i <= 420; i = i + 10) {
 
 		setcolor(WHITE);
@@ -190,7 +196,7 @@ void Hypno1(){
 
 void Hypno2(){
     initwindow(1000,1000,"Hypno2");
-   for(int a=0;a<5;a++){
+   for(int a=0;a<3;a++){
     setcolor(BLUE);
 
    circle(500,500,50);
@@ -357,10 +363,14 @@ void Eclipse(){
     setfillstyle(SOLID_FILL,YELLOW);
     circle(600,400,100);
     floodfill(600,400,7);
+    settextstyle(1, HORIZ_DIR, 3);
+    outtextxy(600,550,"SUN");
 
     ellipse(600,400,0,360,500,200);
 
     circle(1100,400,50);
+    settextstyle(1, HORIZ_DIR, 3);
+    outtextxy(1100,550,"EARTH");
     setfillstyle(SOLID_FILL,BLACK);
     floodfill(1110,400,7);
     setfillstyle(SOLID_FILL,WHITE);
@@ -369,6 +379,8 @@ void Eclipse(){
     ellipse(1100,400,0,360,250,100);
 
     circle(850,400,25);
+    settextstyle(1, HORIZ_DIR, 3);
+    outtextxy(850,550,"MOON");
     setfillstyle(SOLID_FILL,WHITE);
     floodfill(855,400,7);
     setfillstyle(SOLID_FILL,YELLOW);
@@ -378,50 +390,73 @@ void Eclipse(){
     closegraph();
 }
 
+void eid(){
+    initwindow(1000,1000,"");
+
+    setcolor(RED);
+
+    settextstyle(1, HORIZ_DIR, 10);
+    outtextxy(300,100,"EID");
+
+    settextstyle(1, HORIZ_DIR, 8);
+    outtextxy(75,300,"MUBARAK");
+
+    settextstyle(1, HORIZ_DIR, 5);
+    outtextxy(25,500,"in advance ,Let's enjoy my art ");
+
+
+    getch();
+    closegraph();
+}
+
 int main(){
     int gd = DETECT, gm;
     cout<<"NAME : ASHIK UL ISLAM"<<endl;
     cout<<"ID : CSE2101022065"<<endl;
-    cout<<"-------------------------"<<endl;
+    cout<<"=========================="<<endl;
     cout<<"-------------MENU---------"<<endl;
-    cout<<"            1.Emoji"<<endl;
-    cout<<"            2.Hypno1"<<endl;
-    cout<<"            3.Flag"<<endl;
-    cout<<"            4.Hypno2"<<endl;
-    cout<<"            5.Eclipse"<<endl;
-    cout<<"            6.Hypno3"<<endl;
-    cout<<"            7.Moving Car"<<endl;
-    cout<<"            8.Clock"<<endl;
+    cout<<"            1.Eid mubarak"<<endl;
+    cout<<"            2.Emoji"<<endl;
+    cout<<"            3.Hypno1"<<endl;
+    cout<<"            4.Flag"<<endl;
+    cout<<"            5.Hypno2"<<endl;
+    cout<<"            6.Eclipse"<<endl;
+    cout<<"            7.Hypno3"<<endl;
+    cout<<"            8.Moving Car"<<endl;
+    cout<<"            9.Clock"<<endl;
     cout<<"            Enter 0 to Exit"<<endl;
 
-    cout<<"-------------------------"<<endl;
+    cout<<"==========================="<<endl;
     int x;
     while(1){
-    cout<<"Enter your choice"<<endl;
+    cout<<"Enter your choice from menu "<<endl;
     cin>>x;
     switch(x){
         case 1:
-            Emoji();
+            eid();
             break;
         case 2:
-            Hypno1();
+            Emoji();
             break;
         case 3:
-            Flag();
+            Hypno1();
             break;
         case 4:
-            Hypno2();
+            Flag();
             break;
         case 5:
-            Eclipse();
+            Hypno2();
             break;
         case 6:
-            Hypno3();
+            Eclipse();
             break;
         case 7:
-            MovingCar();
+            Hypno3();
             break;
         case 8:
+            MovingCar();
+            break;
+        case 9:
             Clock();
             break;
         case 0:
